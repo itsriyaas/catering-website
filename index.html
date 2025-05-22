@@ -70,6 +70,80 @@
         opacity: 0.2;
       }
     }
+    /* From Uiverse.io by mrhyddenn */ 
+#btn {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid var(--bs-primary);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+#btn:hover {
+  background: var(--bs-primary);
+  box-shadow: 0 0 30px 5px var(--bs-primary);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+#btn:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+#btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+#btn:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
   </style>
 
   <body>
@@ -169,7 +243,7 @@
     <!-- Hero End -->
 
     <!-- About Satrt -->
-    <div class="container-fluid py-6">
+    <div class="container-fluid py-4">
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-7 wow bounceInUp" data-wow-delay="0.3s">
@@ -214,7 +288,7 @@
     </div>
     <!-- About End -->
  <!-- Events Start -->
-<div class="container-fluid event py-6" id="events">
+<div class="container-fluid event py-4" id="events">
     <div class="container">
         <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
             <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Latest Events</small>
@@ -223,17 +297,17 @@
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
                 <li class="nav-item p-2">
-                    <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-2">
+                    <a class="d-flex py-2 mx-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-2" id="btn">
                         <span class="text-dark" style="width: 180px;">Stage Decoration</span>
                     </a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
+                    <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3" id="btn">
                         <span class="text-dark" style="width: 180px;">Catering</span>
                     </a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
+                    <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4" id="btn">
                         <span class="text-dark" style="width: 180px;">Event Management</span>
                     </a>
                 </li>
@@ -438,6 +512,11 @@
         </div>
     </div>
 </div>
+<div class="d-flex justify-content-center mb-5"><a
+              href="/event.html"
+              class="btns btn-primary py-3 px-5 d-none d-xl-inline-block rounded-pill"
+              >More Events</a
+            ></div>
 <!-- Events End -->
 
     <!-- Service Start -->
@@ -457,7 +536,7 @@
             data-aos="zoom-in"
             data-aos-delay="100"
           >
-            <a href="/event.html#">
+            <a href="/catering.html">
               <div class="card h-100 shadow-sm border-0 text-center p-4">
                 <img
                   src="/img/servicon/wedding-ring.png"
@@ -480,7 +559,7 @@
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-           <a href="/event.html">
+           <a href="/stagedecoration.html">
               <div class="card h-100 shadow-sm border-0 text-center p-4">
                 <img
                   src="/img/servicon/wedding-arch.png"
@@ -503,7 +582,7 @@
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            <a href="/event.html">
+            <a href="/eventmanagement.html">
               <div class="card h-100 shadow-sm border-0 text-center p-4">
                 <img
                   src="/img/servicon/party.png"
@@ -597,6 +676,118 @@
 </div>
 <!-- Video Section End -->
 
+  <!-- Testimonial Start -->
+        <div class="container-fluid py-6">
+    <div class="container">
+        <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+            <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Testimonial</small>
+            <h1 class="display-5 mb-5">What Our Customers say!</h1>
+        </div>
+
+        <div class="owl-carousel owl-theme testimonial-carousel testimonial-carousel-1 mb-4 wow bounceInUp" data-wow-delay="0.1s">
+
+            <div class="testimonial-item rounded bg-light p-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 60px; height: 60px; font-weight: bold; font-size: 20px;">
+                        K
+                    </div>
+                    <div class="position-absolute" style="top: 15px; right: 20px;">
+                        <i class="fa fa-quote-right fa-2x"></i>
+                    </div>
+                    <div class="ps-3 my-auto">
+                        <h4 class="mb-0">Krishnaja Abhilash</h4>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="d-flex">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                    <p class="fs-5 m-0 pt-3">It was a great experience to have the Rockland team take care of every aspect of my brother's marriage...</p>
+                </div>
+            </div>
+
+            <div class="testimonial-item rounded bg-light p-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 60px; height: 60px; font-weight: bold; font-size: 20px;">
+                        H
+                    </div>
+                    <div class="position-absolute" style="top: 15px; right: 20px;">
+                        <i class="fa fa-quote-right fa-2x"></i>
+                    </div>
+                    <div class="ps-3 my-auto">
+                        <h4 class="mb-0">Henna David</h4>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="d-flex">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                    <p class="fs-5 m-0 pt-3">Highly recommended!!! Food was great. Management was always responsive...</p>
+                </div>
+            </div>
+
+            <div class="testimonial-item rounded bg-light p-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 60px; height: 60px; font-weight: bold; font-size: 20px;">
+                        A
+                    </div>
+                    <div class="position-absolute" style="top: 15px; right: 20px;">
+                        <i class="fa fa-quote-right fa-2x"></i>
+                    </div>
+                    <div class="ps-3 my-auto">
+                        <h4 class="mb-0">Anoop K</h4>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="d-flex">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                    <p class="fs-5 m-0 pt-3">I recently had the pleasure of using this catering service, and I couldn’t be more impressed...</p>
+                </div>
+            </div>
+
+            <div class="testimonial-item rounded bg-light p-4">
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style="width: 60px; height: 60px; font-weight: bold; font-size: 20px;">
+                        A
+                    </div>
+                    <div class="position-absolute" style="top: 15px; right: 20px;">
+                        <i class="fa fa-quote-right fa-2x"></i>
+                    </div>
+                    <div class="ps-3 my-auto">
+                        <h4 class="mb-0">Amal SP</h4>
+                    </div>
+                </div>
+                <div class="testimonial-content">
+                    <div class="d-flex">
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                    <p class="fs-5 m-0 pt-3">Great food and excellent service. Would recommend it to everyone.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        <!-- Testimonial End -->
+
 
 
 
@@ -644,15 +835,15 @@
             <div class="footer-item">
               <h4 class="mb-4">Our Services</h4>
               <div class="d-flex flex-column align-items-start">
-                <a class="text-body mb-3" href="#events"
+                <a class="text-body mb-3" href="/catering.html"
                   ><i class="fa fa-arrow-right text-primary me-2"></i>Wedding
                   Catering</a
                 >
-                <a class="text-body mb-3" href="#events"
+                <a class="text-body mb-3" href="/stagedecoration.html"
                   ><i class="fa fa-arrow-right text-primary me-2"></i
                   >Stage Decoration</a
                 >
-                <a class="text-body mb-3" href="#events"
+                <a class="text-body mb-3" href="/eventmanagement.html"
                   ><i class="fa fa-arrow-right text-primary me-2"></i>Event Management</a
                 >
               </div>
